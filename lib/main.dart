@@ -58,10 +58,9 @@ class _BreathingScreenState extends State<BreathingScreen>
       CurvedAnimation(parent: _controller, curve: Curves.easeInOutSine),
     );
 
-    // Arka plan renginin açıktan koyuya geçiş animasyonu
     _bgColorAnimation = ColorTween(
-      begin: const Color(0xFFB0BEB4), // Koyu renk: Dinlendirici adaçayı yeşili (Nefes verirken)
-      end: const Color(0xFFF5F3E9),   // Açık renk: Ferah kum rengi (Nefes alırken)
+      begin: const Color(0xFFB0BEB4), 
+      end: const Color(0xFFF5F3E9),   
     ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOutSine));
   }
 
@@ -80,7 +79,6 @@ class _BreathingScreenState extends State<BreathingScreen>
 
   @override
   Widget build(BuildContext context) {
-    // Tüm ekranı AnimatedBuilder içine aldık, böylece arka plan her karede güncelleniyor
     return AnimatedBuilder(
       animation: _controller,
       builder: (context, child) {
@@ -100,7 +98,7 @@ class _BreathingScreenState extends State<BreathingScreen>
                     style: const TextStyle(
                       fontSize: 26,
                       fontWeight: FontWeight.w400,
-                      color: Color(0xFF2C3E33), // Daha okunaklı, tok çam yeşili
+                      color: Color(0xFF2C3E33), 
                       letterSpacing: 1.2,
                     ),
                   ),
